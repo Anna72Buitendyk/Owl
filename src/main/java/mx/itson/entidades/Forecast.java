@@ -4,7 +4,7 @@
  */
 package mx.itson.entidades;
 
-import java.util.Date;
+import java.text.DateFormat;
 import mx.itson.enums.Status;
 
 /**
@@ -12,7 +12,7 @@ import mx.itson.enums.Status;
  * @author alumnog
  */
 public class Forecast {
-    private Date date;
+    private DateFormat date;
     private int maxTemperature;
     private int minTemperature;
     private Status status;
@@ -20,14 +20,14 @@ public class Forecast {
     /**
      * @return the date
      */
-    public Date getDate() {
+    public DateFormat getDate() {
         return date;
     }
 
     /**
      * @param date the date to set
      */
-    public void setDate(Date date) {
+    public void setDate(DateFormat date) {
         this.date = date;
     }
 
