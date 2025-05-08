@@ -4,7 +4,9 @@
  */
 package mx.itson.entidades;
 
+import com.google.gson.annotations.SerializedName;
 import java.text.DateFormat;
+import java.util.Date;
 import mx.itson.enums.Status;
 
 /**
@@ -12,22 +14,25 @@ import mx.itson.enums.Status;
  * @author alumnog
  */
 public class Forecast {
-    private DateFormat date;
+    @SerializedName("day")
+    private Date date;
+    @SerializedName("max_temperature")
     private int maxTemperature;
+    @SerializedName("min_temperature")
     private int minTemperature;
     private Status status;
 
     /**
      * @return the date
      */
-    public DateFormat getDate() {
+    public Date getDate() {
         return date;
     }
 
     /**
      * @param date the date to set
      */
-    public void setDate(DateFormat date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

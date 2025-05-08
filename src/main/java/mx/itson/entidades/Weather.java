@@ -6,6 +6,8 @@ package mx.itson.entidades;
 
 import java.util.List;
 import mx.itson.enums.Status;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 
 /**
  *
@@ -16,6 +18,7 @@ public class Weather {
     private int temperature;
     private float humidity;
     private Status status;
+    @SerializedName("wind_speed")
     private int windSpeed;
     private List<Forecast> forecast;
 
@@ -103,4 +106,20 @@ public class Weather {
         this.forecast = forecast;
     }
     
+    /**
+     * 
+     * @param json Jason a deserializar al objecto weather
+     * @return Retorna el objecto weather de clase Weather, deserializada de String de tipo json
+     */
+    public static Weather deserialize(String json){
+        Weather weather = new Weather();
+        try{
+            Gson gson = new Gson();
+            weather = gson.fromJson(json, Weather.class);
+        }
+        catch( Exception ex){
+            System.err.println("Error" + ex.getMessage());
+        }
+        return weather;
+    }
 }

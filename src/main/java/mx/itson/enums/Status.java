@@ -11,13 +11,13 @@ import com.google.gson.annotations.SerializedName;
  */
 public enum Status {
     @SerializedName("1")
-            RAIN,
+            CLEAR,
     @SerializedName("2")
-            SNOW,
-    @SerializedName("3")
             CLOUDY,
+    @SerializedName("3")
+            SNOW,
     @SerializedName("4")
-            CLEAR
+            RAIN
     
     
 }
